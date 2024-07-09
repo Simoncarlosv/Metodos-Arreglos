@@ -62,7 +62,6 @@ function renderData(Tareas){
     ListaTareas.innerHTML = html;
     TareasT.innerHTML = Tareas.length;
     Contadores();
-
 }
 
 
@@ -96,71 +95,3 @@ BtnAgregar.addEventListener("click", () => {
 if(ListaTareas){
     renderData(Tareas, ListaTareas)
 }
-
-
-
-
-/* 
-
-// CREAR EVENTO EJECUTADO CON CLICK PARA TOMAR DATO Y AGREGARLO AL ARREGLO
-BtnAgregar.addEventListener("click", () => {
-    ids += 1;
-    const nuevaTarea = InputTareas.value;
-    Tareas.push({id: ids, tarea: nuevaTarea, estado: false})
-    InputTareas.value = ""
-
-    // CREAR LISTADO PRINCIPAL DE TAREAS DEL ARREGLO
-
-    let html = ""
-    Tareas.forEach(function(tarea){
-        
-        html += `
-
-            <tr>
-                <td>${tarea.id}</td>
-                <td>${tarea.tarea}</td>
-                <td>${tarea.estado
-                ? `<input checked type="checkbox" name="estado_${tarea.tarea}" id="checkbox_${tarea.tarea}">`
-                : `<input type="checkbox" name="estado_${tarea.tarea}" id="checkbox_${tarea.tarea}">`
-                }</td>
-                <td><button onclick="BorrarTarea(${tarea.id})">X</button></td>
-            </tr>
-        `
-    })
-    ListaTareas.innerHTML = html;
-    TareasT.innerHTML = Tareas.length;
-})
-
- */
-
-
-/* 
-
-// FUNCIÓN BORRAR ELEMENTO DEL ARREGLO
-function BorrarTarea(id){
-    const BuscarTarea = Tareas.findIndex(tarea => tarea.id == id)
-    Tareas.splice(BuscarTarea, 1)
-
-    // REHACER LISTADO SIN EL ELEMENTO ELIMINADO
-    
-    let html = ""
-    Tareas.forEach(function(tarea){
-        
-        html += `
-
-            <tr>
-                <td>${tarea.id}</td>
-                <td>${tarea.tarea}</td>
-                <td>${tarea.estado
-                ? `<input checked type="checkbox" name="estado_${tarea.tarea}" id="checkbox_${tarea.tarea}">`
-                : `<input type="checkbox" name="estado_${tarea.tarea}" id="checkbox_${tarea.tarea}">`
-                }</td>
-                <td><button onclick="BorrarTarea(${tarea.id})">X</button></td>
-            </tr>
-        `
-    })
-    ListaTareas.innerHTML = html;
-    TareasT.innerHTML = Tareas.length;
-}
-
- */
